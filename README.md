@@ -45,3 +45,5 @@ This project uses an **HC-SR04 ultrasonic sensor** to measure distance and activ
 ## Circuit Diagram
 
 ![Ultrasonic Distance Sensor Project](./image1.png)
+![Ultrasonic Distance Sensor Project](./image2.png)
+![Ultrasonic Distance Sensor Project](./image3.png)
