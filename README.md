@@ -1,31 +1,46 @@
-# 📏 Ultrasonic Distance Sensor with LEDs (HC-SR04 + Arduino)
+# 📏 Ultrasonic Distance-Based LED Indicator (Arduino + HC-SR04)
 
-This project uses an **HC-SR04 ultrasonic sensor** to measure distance and turns on LEDs based on how close an object is to the sensor. It’s a great beginner project to understand distance sensing and conditional control using Arduino.
+This project uses an **HC-SR04 ultrasonic sensor** to measure distance and activates **different LEDs based on the proximity** of an object. The built-in LED and three external LEDs are used to visually indicate how far the object is.
 
-## 📌 Features
+## 🔦 Features
 
-- Measures distance using HC-SR04
-- Controls 3 LEDs based on distance thresholds
-- Real-time feedback for object proximity
-- Easy to build and understand
+- Measures distance in real-time using the HC-SR04 sensor
+- Activates one of four LEDs based on distance:
+  - Built-in LED: < 10 cm
+  - LED1: 10–14 cm
+  - LED2: 15–19 cm
+  - LED3: 20–24 cm
+- Simple and useful as a visual distance alert system
 
 ## 🧰 Hardware Required
 
 - Arduino Uno (or compatible)
-- HC-SR04 Ultrasonic Distance Sensor
-- 3x LEDs (Red, Yellow, Green)
+- HC-SR04 Ultrasonic Sensor
+- 3x LEDs (any color)
 - 3x 220Ω resistors
-- Breadboard and jumper wires
+- Jumper wires and breadboard
+- USB cable for uploading the code
 
 ## 🔌 Pin Configuration
 
-| Component    | Arduino Pin |
-|--------------|-------------|
-| HC-SR04 TRIG | 9           |
-| HC-SR04 ECHO | 10          |
-| Red LED      | 3           |
-| Yellow LED   | 4           |
-| Green LED    | 5           |
+| Component       | Arduino Pin |
+|----------------|-------------|
+| HC-SR04 TRIG    | 9           |
+| HC-SR04 ECHO    | 10          |
+| Built-in LED    | 13 (`LED_BUILTIN`) |
+| LED1 (Near)     | 3           |
+| LED2 (Medium)   | 4           |
+| LED3 (Far)      | 5           |
+
+## 💡 Working Logic
+
+- The HC-SR04 sends out an ultrasonic pulse and waits for the echo.
+- Based on the time it takes to return, the distance is calculated.
+- Depending on the measured distance, one of four LEDs lights up:
+  - **< 10 cm** → Built-in LED
+  - **10–14 cm** → LED1
+  - **15–19 cm** → LED2
+  - **20–24 cm** → LED3
 
 ## Circuit Diagram
 
